@@ -11,7 +11,7 @@ import {
 } from '@remirror/core';
 import { toggleMark } from 'prosemirror-commands';
 
-export class BoldExtension extends MarkExtension<MarkExtensionOptions> {
+export class BoldExtension extends MarkExtension {
   get name() {
     return 'bold' as const;
   }

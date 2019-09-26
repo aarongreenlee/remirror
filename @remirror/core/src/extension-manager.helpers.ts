@@ -79,11 +79,15 @@ interface CreateCommandsParams extends ExtensionListParams {
  * @param params - the params without the type.
  */
 const getParamsType = <GKey extends keyof AnyExtension, GParams extends ExtensionManagerParams>(
-  extention: Required<Pick<AnyExtension, GKey>>,
+  extension: Required<Pick<AnyExtension, GKey>>,
   params: GParams,
 ) => {
-  if (isMarkExtension(extention)) return { type: params.schema.marks[extention.name] };
-  if (isNodeExtension(extention)) return { type: params.schema.nodes[extention.name] };
+  if (isMarkExtension(extension)) {
+    return { type: params.schema.marks[extension.name] };
+  }
+  if (isNodeExtension(extension)) {
+    return { type: params.schema.nodes[extension.name] };
+  }
   return {} as any;
 };
 
@@ -210,13 +214,15 @@ export const extensionPropertyMapper = <
   }
 
   const getFn = () => {
-    if (isNodeExtension(extension))
+    if (isNodeExtension(extension)) {
       return extensionMethod.bind(extension)({
         ...params,
         type: Cast(params.schema.nodes[extension.name]),
       });
-    if (isMarkExtension(extension))
+    }
+    if (isMarkExtension(extension)) {
       return extensionMethod.bind(extension)({ ...params, type: Cast(params.schema.marks[extension.name]) });
+    }
     return extensionMethod.bind(extension)(Cast(params));
   };
 
@@ -226,9 +232,9 @@ export const extensionPropertyMapper = <
 /**
  * Converts an extension to its mapped value
  */
-function convertToExtensionMapValue(extension: FlexibleExtension): PrioritizedExtension {
+const convertToExtensionMapValue = (extension: FlexibleExtension): PrioritizedExtension => {
   return isExtension(extension) ? { priority: DEFAULT_EXTENSION_PRIORITY, extension } : { ...extension };
-}
+};
 
 /**
  * Sorts and transforms extension map based on the provided priorities and

@@ -32,7 +32,7 @@ export interface RemirrorManagerProps {
 }
 
 export type RemirrorComponentType<P extends {} = {}> = ComponentType<P> & RemirrorComponentStaticProperties;
-export type RemirrorElement<GOptions extends {} = any> = ReactElement<any> & {
+export type RemirrorElement<GOptions extends {} = any> = ReactElement & {
   type: RemirrorComponentType<GOptions>;
 };
 

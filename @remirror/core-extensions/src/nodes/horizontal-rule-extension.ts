@@ -9,7 +9,7 @@ import {
   nodeInputRule,
 } from '@remirror/core';
 
-export class HorizontalRuleExtension extends NodeExtension<NodeExtensionOptions> {
+export class HorizontalRuleExtension extends NodeExtension {
   get name() {
     return 'horizontalRule' as const;
   }

@@ -17,7 +17,7 @@ const hasCursor = <T extends {}>(arg: T): arg is T & { $cursor: ResolvedPos } =>
   return bool(Cast(arg).$cursor);
 };
 
-export class ImageExtension extends NodeExtension<NodeExtensionOptions> {
+export class ImageExtension extends NodeExtension {
   get name() {
     return 'image' as const;
   }

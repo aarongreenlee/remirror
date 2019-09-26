@@ -491,7 +491,7 @@ export const randomInt = (min: number, max?: number) => Math.floor(randomFloat(m
 export const startCase = (str: string) => {
   return str
     .replace(/_/g, ' ')
-    .replace(/([a-z])([A-Z])/g, (_, $1, $2) => $1 + ' ' + $2)
+    .replace(/([a-z])([A-Z])/g, (_, $1, $2) => `${$1} ${$2}`)
     .replace(/(\s|^)(\w)/g, (_, $1, $2) => $1 + $2.toUpperCase());
 };
 
@@ -516,7 +516,7 @@ export const kebabCase = (str: string) => {
   // replace capitals with space + lower case equivalent for later parsing
   return str
     .replace(capitals, match => {
-      return ' ' + (match.toLowerCase() || match);
+      return ` ${match.toLowerCase() || match}`;
     })
     .trim()
     .split(wordSeparators)
@@ -836,7 +836,7 @@ export const keys = <GObj extends object, GKey extends Extract<keyof GObj, strin
  * specific types to be checked.
  */
 export const includes = <GType>(
-  array: GType[] | ReadonlyArray<GType>,
+  array: GType[] | readonly GType[],
   item: unknown,
   fromIndex?: number,
 ): item is GType => array.includes(item as GType, fromIndex);
