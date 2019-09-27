@@ -6,7 +6,6 @@ import {
   CommandNodeTypeParams,
   isElementDOMNode,
   NodeExtension,
-  NodeExtensionOptions,
   NodeExtensionSpec,
 } from '@remirror/core';
 import { ResolvedPos } from 'prosemirror-model';

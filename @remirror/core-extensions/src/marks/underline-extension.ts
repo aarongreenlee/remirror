@@ -2,7 +2,6 @@ import {
   CommandMarkTypeParams,
   ExtensionManagerMarkTypeParams,
   MarkExtension,
-  MarkExtensionOptions,
   MarkExtensionSpec,
   MarkGroup,
 } from '@remirror/core';

@@ -4,7 +4,6 @@ import {
   isElementDOMNode,
   isString,
   MarkExtension,
-  MarkExtensionOptions,
   MarkExtensionSpec,
   MarkGroup,
   markInputRule,

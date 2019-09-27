@@ -12,7 +12,6 @@ import {
   NodeExtension,
   ProsemirrorNode,
   SchemaFromExtensions,
-  SchemaParams,
   EditorViewParams,
   EditorSchema,
 } from '@remirror/core';

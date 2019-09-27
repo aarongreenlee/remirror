@@ -4,7 +4,6 @@ import {
   EDITOR_CLASS_SELECTOR,
   ExtensionManagerNodeTypeParams,
   NodeExtension,
-  NodeExtensionOptions,
   NodeExtensionSpec,
   NodeGroup,
   toggleBlockItem,

@@ -3,7 +3,6 @@ import {
   CommandNodeTypeParams,
   ExtensionManagerNodeTypeParams,
   NodeExtension,
-  NodeExtensionOptions,
   NodeExtensionSpec,
   NodeGroup,
   nodeInputRule,
