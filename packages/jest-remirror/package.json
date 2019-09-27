@@ -20,7 +20,7 @@
     "@remirror/core-extensions": "0.6.0",
     "@remirror/react": "0.6.0",
     "@remirror/react-utils": "0.6.0",
-    "@testing-library/react": "^9.1.4",
+    "@testing-library/react": "^9.2.0",
     "@types/node": ">=8",
     "@types/prosemirror-model": "^1.7.2",
     "@types/prosemirror-view": "^1.11.0",
